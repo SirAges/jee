@@ -1,0 +1,119 @@
+
+1. **equal**: Matches records where the specified attribute is equal to a given value.
+   
+   Example:
+   ```json
+   {
+     "method": "equal",
+     "attribute": "name",
+     "values": ["John"]
+   }
+   ```
+
+2. **not_equal**: Matches records where the specified attribute is not equal to a given value.
+   
+   Example:
+   ```json
+   {
+     "method": "not_equal",
+     "attribute": "status",
+     "values": ["archived"]
+   }
+   ```
+
+3. **contains**: Matches records where the specified attribute contains a substring.
+   
+   Example:
+   ```json
+   {
+     "method": "contains",
+     "attribute": "title",
+     "values": ["App"]
+   }
+   ```
+
+4. **not_contains**: Matches records where the specified attribute does not contain a substring.
+   
+   Example:
+   ```json
+   {
+     "method": "not_contains",
+     "attribute": "description",
+     "values": ["deprecated"]
+   }
+   ```
+
+5. **range**: Matches records where the specified attribute value falls within a numeric range.
+   
+   Example:
+   ```json
+   {
+     "method": "range",
+     "attribute": "price",
+     "values": [10, 100]
+   }
+   ```
+
+6. **sort**: Sorts records based on the specified attribute in ascending or descending order.
+   
+   Example:
+   ```json
+   {
+     "method": "sort",
+     "attribute": "createdAt",
+     "order": "desc"
+   }
+   ```
+
+7. **limit**: Limits the number of records returned.
+   
+   Example:
+   ```json
+   {
+     "method": "limit",
+     "values": [10]
+   }
+   ```
+
+8. **offset**: Skips a specified number of records before returning results, useful for pagination.
+   
+   Example:
+   ```json
+   {
+     "method": "offset",
+     "values": [20]
+   }
+   ```
+
+9. **search**: Searches records based on a full-text search query.
+   
+   Example:
+   ```json
+   {
+     "method": "search",
+     "attribute": "content",
+     "values": ["keyword"]
+   }
+   ```
+
+10. **filter**: Applies complex filtering conditions using logical operators (`and`, `or`, `not`).
+
+    Example:
+    ```json
+    {
+      "method": "filter",
+      "attribute": "category",
+      "operator": "and",
+      "filters": [
+        {
+          "method": "equal",
+          "attribute": "type",
+          "values": ["digital"]
+        },
+        {
+          "method": "range",
+          "attribute": "price",
+          "values": [10, 100]
+        }
+      ]
+    }
